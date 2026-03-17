@@ -4,10 +4,13 @@
 
 *Shilpi Goyal · Deepak Motwani — Amity University, Gwalior, India*
 
----
 
 PARSeq-GeoAware is a dual-branch scene text recognition framework that combines a Vision Transformer encoder with an **Enhanced Geometric Feature Extractor (GFE)**, adaptive coarse-to-fine rectification (affine + TPS), and a cross-attention fusion module decoded by a CTC head. Trained on 176,630 image-label pairs across three progressive stages, it achieves strong performance on both regular and irregular/curved text benchmarks — without a language model.
+---
 
+# Overall Architecture
+
+![Architecture](figures/fig1_overall_arch.jpg)
 ---
 
 ## Results
