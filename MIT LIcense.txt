@@ -1,0 +1,22 @@
+
+### Summary – how anyone uses it locally
+
+1. `git clone https://github.com/yourusername/PARSeq-GeoAware.git`
+2. `cd PARSeq-GeoAware`
+3. `pip install -r requirements.txt`
+4. **Copy/download the large image folders** to their computer (this is the manual step – unavoidable for large private datasets)
+5. Put images in the expected folder structure (explained in README)
+6. Adjust **1–3 paths** in `train.py` (or better – use command-line arguments or config file)
+7. Run `python train.py ...` with correct annotation txt paths
+
+That's the **realistic way** most academic & open-source STR / OCR / vision repos work when images are large and private.
+
+If you want, I can help you write:
+
+- full `.gitignore`
+- `requirements.txt`
+- more polished README
+- optional `config.yaml` + hydra/argparse integration
+- script to **verify folder structure** before training
+
+Just tell me which part you want next.

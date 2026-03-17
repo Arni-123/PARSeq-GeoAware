@@ -1,0 +1,49 @@
+# configs/default.yaml
+
+project:
+  name: PARSeq-GeoAware
+  save_dir: checkpoints_geoaware_v4
+
+training:
+  charset: 36
+  batch_size: 32
+  accum_steps: null   # auto: 4 on GPU, 1 on CPU
+  num_workers: 2
+  log_every: 50
+
+stages:
+  stage1:
+    epochs: 12
+    lr: 0.0001
+    datasets:
+      mjsynth: "data/train/mjsynth_path_label.txt"
+      iiit5k:  "data/train/iiit5k_train.txt"
+    max_samples:
+      mjsynth: 134828
+
+  stage2:
+    epochs: 12
+    lr: 0.00005
+    datasets:
+      iiit5k:  "data/train/iiit5k_train.txt"
+      art:     "data/train/art_train_clean.txt"
+    max_samples:
+      art: 36000
+
+  stage3:
+    epochs: 25
+    lr: 0.0001
+    datasets:
+      art:        "data/train/art_train_clean.txt"
+      totaltext:  "data/train/totaltext_train_gt.txt"
+    max_samples:
+      art: 36000
+      totaltext: 9000
+    iiit5k_in_stage3: true
+
+model:
+  use_geometric: true
+  use_rectification: true
+  use_tps: false
+  use_attention: false
+  max_len: 25
