@@ -9,3 +9,6 @@ matplotlib>=3.7.0
 python-docx>=0.8.11
 tqdm>=4.65.0
 pyyaml>=6.0
+opencv-python
+tqdm
+scipy
